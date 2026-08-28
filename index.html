@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WexCoast Engineering &amp; Consulting</title>
+  <meta name="description" content="WexCoast Engineering and WexCoast Consulting — analog and mixed-signal design services." />
+  <style>
+    :root {
+      --purple: #5b2a86;
+      --purple-dark: #3f1d5e;
+      --yellow: #f2a900;
+      --yellow-soft: #ffd76b;
+      --blue: #2f5f8a;
+      --blue-soft: #dce8f2;
+      --ink: #221a2b;
+      --paper: #fbf9f4;
+      --card: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, -apple-system, Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
+    }
+
+    /* ---------- Header ---------- */
+    header {
+      background: linear-gradient(120deg, var(--purple-dark), var(--purple));
+      color: #fff;
+      padding: 3rem 1.5rem 3.5rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .badge {
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      background: var(--yellow);
+      color: var(--purple-dark);
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    @media (max-width: 600px) {
+      .badge { position: static; display: inline-block; margin-bottom: 1rem; }
+    }
+
+    .brand {
+      display: inline-block;
+      border: 2px solid var(--yellow);
+      border-radius: 12px;
+      padding: 0.6rem 1.2rem;
+      margin-bottom: 1.2rem;
+      background: rgba(0,0,0,0.12);
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: clamp(1.7rem, 4vw, 2.6rem);
+      letter-spacing: 0.5px;
+      font-weight: 700;
+    }
+
+    .brand .amp { color: var(--yellow); font-weight: 400; padding: 0 0.15rem; }
+
+    .tagline {
+      max-width: 640px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      color: var(--blue-soft);
+    }
+
+    /* ---------- Layout ---------- */
+    main {
+      max-width: 960px;
+      margin: -1.5rem auto 3rem;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      background: var(--card);
+      border-radius: 12px;
+      box-shadow: 0 6px 24px rgba(63, 29, 94, 0.08);
+      padding: 1.8rem 2rem;
+      margin-bottom: 1.6rem;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: var(--purple);
+      font-size: 1.4rem;
+      border-bottom: 3px solid var(--yellow);
+      display: inline-block;
+      padding-bottom: 0.15rem;
+    }
+
+    ul.skills {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.6rem 1.4rem;
+    }
+
+    ul.skills li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.4rem;
+    }
+
+    ul.skills li::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 0.5em;
+      width: 0.6rem; height: 0.6rem;
+      background: var(--blue);
+      border-radius: 2px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-top: 0.8rem;
+    }
+
+    .service {
+      border: 1px solid var(--blue-soft);
+      border-left: 4px solid var(--purple);
+      border-radius: 8px;
+      padding: 0.9rem 1rem;
+    }
+
+    .service h3 {
+      margin: 0 0 0.3rem;
+      font-size: 1.05rem;
+      color: var(--blue);
+    }
+
+    .service p { margin: 0; font-size: 0.95rem; }
+
+    /* ---------- Contact ---------- */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 0.8rem;
+      margin-bottom: 2rem;
+    }
+
+    .contact-item {
+      background: var(--blue-soft);
+      border-radius: 8px;
+      padding: 0.9rem 1rem;
+    }
+
+    .contact-item .label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--purple);
+      font-weight: 700;
+    }
+
+    .contact-item .value { font-size: 1rem; margin-top: 0.2rem; }
+
+    /* ---------- Form ---------- */
+    .form-section {
+      border-top: 3px solid var(--purple);
+      padding-top: 1.5rem;
+    }
+
+    .form-section h2 {
+      border: none;
+      background: linear-gradient(90deg, var(--purple) 0, transparent 100%);
+      padding-left: 0.8rem;
+    }
+
+    form {
+      max-width: 520px;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      color: var(--purple);
+      margin-bottom: 0.3rem;
+      font-size: 0.9rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.7rem 0.8rem;
+      border: 1px solid var(--blue-soft);
+      border-radius: 6px;
+      font-size: 1rem;
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--purple);
+      box-shadow: 0 0 0 3px rgba(91, 42, 134, 0.15);
+    }
+
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    button[type="submit"] {
+      background: var(--purple);
+      color: #fff;
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    button[type="submit"]:hover {
+      background: var(--purple-dark);
+    }
+
+    .form-note {
+      font-size: 0.8rem;
+      color: var(--blue);
+      margin-top: 0.8rem;
+      font-style: italic;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      color: var(--purple-dark);
+      font-size: 0.85rem;
+    }
+
+    footer .note {
+      color: var(--blue);
+      font-style: italic;
+    }
+
+    a { color: var(--purple); }
+    a:hover { color: var(--blue); }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="badge">Coming Soon</div>
+    <div class="brand">
+      <h1>WexCoast Engineering <span class="amp">&amp;</span> Consulting</h1>
+    </div>
+    <p class="tagline">
+      Analog &amp; mixed-signal design services. One team, two names —
+      <strong>WexCoast Engineering</strong> and <strong>WexCoast Consulting</strong> —
+      for custom circuits and design advisory.
+    </p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Skills</h2>
+      <ul class="skills">
+        <li>AMS (Analog &amp; Mixed-Signal) design</li>
+        <li>Cadence Virtuoso</li>
+        <li>Schematic capture &amp; layout (custom / matched layouts)</li>
+        <li>SPICE simulation &amp; verification</li>
+        <li>Transimpedance, PLL &amp; SerDes blocks</li>
+        <li>Data converters (SAR, Delta-Sigma, pipeline)</li>
+        <li>Filter design (RC, switched-capacitor)</li>
+        <li>Power management &amp; LDO design</li>
+        <li>Layout-aware simulation &amp; extraction (Spectre)</li>
+        <li>Corner / PVT analysis &amp; Monte Carlo</li>
+        <li>Semiconductor process familiarity (multiple nodes)</li>
+        <li>Design review, DFM &amp; tape-out support</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Services</h2>
+      <div class="services">
+        <div class="service">
+          <h3>Custom Analog / Mixed-Signal Design</h3>
+          <p>Front-to-back AMS block design in Virtuoso with simulation-driven verification and matched, layout-aware deliverables.</p>
+        </div>
+        <div class="service">
+          <h3>Design Advisory &amp; Review</h3>
+          <p>Independent review of architectures, simulation results, and layout — with actionable recommendations before tape-out.</p>
+        </div>
+        <div class="service">
+          <h3>Simulation &amp; Verification</h3>
+          <p>SPICE setup, corner and Monte Carlo analysis, and extraction review to de-risk your mixed-signal designs.</p>
+        </div>
+        <div class="service">
+          <h3>Bring-Up &amp; Debug Support</h3>
+          <p>Post-silicon or pre-silicon debug assistance for converters, high-speed, and power blocks.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="form-section">
+      <h2>Contact Us</h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <div class="label">Email</div>
+          <div class="value"><a href="mailto:info@wexcoast.com">info@wexcoast.com</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="label">Phone</div>
+          <div class="value"><a href="tel:+00000000000">+00 (0) 000 000 0000</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="label">Address</div>
+          <div class="value">123 Harbour Road<br />Wexford, Wexford, Ireland</div>
+        </div>
+        <div class="contact-item">
+          <div class="label">Hours</div>
+          <div class="value">Mon–Fri, 9:00–17:00 (IST)</div>
+        </div>
+      </div>
+
+      <form action="https://formspree.io/f/placeholder_id" method="POST">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required placeholder="Your full name" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="your@email.com" />
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" required placeholder="Project inquiry, consultation, etc." />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required placeholder="Tell us about your project or needs..."></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+        <p class="form-note">This form is connected to a demo backend. Replace the action URL with your real email service (e.g., Formspree) or your own server handler.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> WexCoast Engineering &amp; Consulting. All rights reserved.</p>
+    <p class="note">A company to be founded. WexCoast Engineering and WexCoast Consulting are two names for the same practice.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+<!-- 
+Quick Formspree Setup Steps
+Sign up at formspree.io
+Create a new form with destination email info@wexcoast.com
+Copy the generated form endpoint URL
+Replace https://formspree.io/f/placeholder_id with your actual endpoint URL
+Responsive Badge
+The "Coming Soon" badge is positioned in the top-right on desktop, and moves above the logo on mobile screens for better visibility.
+
+Want me to adjust the color balance, add a logo placeholder, or integrate with a specific email service you're already using?
+-->
+
+</body>
+</html>
